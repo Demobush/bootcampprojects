@@ -1,3 +1,4 @@
+
 resource "aws_instance" "my_instance" {
   ami                     = "ami-0557a15b87f6559cf"
   instance_type           = "t2.micro"
@@ -5,6 +6,14 @@ resource "aws_instance" "my_instance" {
     Name ="ec2_instance"
 }
 }
+resource "aws_s3_bucket" "versioning_bucket" {
+  bucket =var.mybucket
+  acl    = "private"
+
+  versioning {
+    enabled = true
+  }
+
 
 provider "aws" {
   region     = "us-east-1"
