@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "versioning_bucket" {
 
 
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
  
 }
 
